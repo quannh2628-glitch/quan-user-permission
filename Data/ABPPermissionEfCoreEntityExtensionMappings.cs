@@ -1,4 +1,6 @@
 using Volo.Abp.Threading;
+using Volo.Abp.ObjectExtending;
+using Volo.Abp.Identity;
 
 namespace ABPPermission.Data;
 
@@ -36,6 +38,17 @@ public static class ABPPermissionEfCoreEntityExtensionMappings
              * See the documentation for more:
              * https://docs.abp.io/en/abp/latest/Customizing-Application-Modules-Extending-Entities
              */
+
+            // Map DateOfBirth (nullable) cho bảng AbpUsers
+            ObjectExtensionManager.Instance
+                .MapEfCoreProperty<IdentityUser, System.DateTime?>(
+                    "DateOfBirth",
+                    (entityBuilder, propertyBuilder) =>
+                    {
+                        // Không bắt buộc, không cần max length; có thể set column type nếu muốn
+                        propertyBuilder.IsRequired(false);
+                    }
+                );
         });
     }
 }
