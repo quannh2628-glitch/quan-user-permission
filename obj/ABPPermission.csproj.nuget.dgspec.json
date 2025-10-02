@@ -1,0 +1,328 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\ABP\\ABPPermission\\ABPPermission\\ABPPermission.csproj": {}
+  },
+  "projects": {
+    "D:\\ABP\\ABPPermission\\ABPPermission\\ABPPermission.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ABP\\ABPPermission\\ABPPermission\\ABPPermission.csproj",
+        "projectName": "ABPPermission",
+        "projectPath": "D:\\ABP\\ABPPermission\\ABPPermission\\ABPPermission.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\ABP\\ABPPermission\\ABPPermission\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "D:\\ABP\\ABPPermission\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.abp.io/c1e62f6d-e9af-413f-a79f-884d28b64125/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AspNetCore.HealthChecks.UI": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AspNetCore.HealthChecks.UI.Client": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AspNetCore.HealthChecks.UI.InMemory.Storage": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.AspNetCore.Authentication.MicrosoftAccount": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Twitter": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog.Sinks.Async": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Volo.Abp.Account.Pro.Admin.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Account.Pro.Admin.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Account.Pro.Public.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Account.Pro.Public.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Account.Pro.Public.Web.OpenIddict": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonX": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "Volo.Abp.AspNetCore.Serilog": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.AuditLogging.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.AuditLogging.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.AuditLogging.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.AutoMapper": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Autofac": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.BackgroundJobs.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.BlobStoring.Database.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Commercial.SuiteTemplates": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.FeatureManagement.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.FeatureManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.FeatureManagement.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Gdpr.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Gdpr.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Gdpr.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Identity.Pro.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Identity.Pro.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Identity.Pro.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Identity.Pro.Web": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.LanguageManagement.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.LanguageManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.LanguageManagement.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.OpenIddict.Pro.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.OpenIddict.Pro.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.OpenIddict.Pro.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.PermissionManagement.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.PermissionManagement.Domain.Identity": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.PermissionManagement.Domain.OpenIddict": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.PermissionManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.PermissionManagement.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.PermissionManagement.Web": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.SettingManagement.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.SettingManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.SettingManagement.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.Studio.Client.AspNetCore": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "Volo.Abp.Swashbuckle": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.TextTemplateManagement.Application": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.TextTemplateManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            },
+            "Volo.Abp.TextTemplateManagement.HttpApi": {
+              "target": "Package",
+              "version": "[9.3.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[9.0.9, 9.0.9]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\Admin\\.dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
