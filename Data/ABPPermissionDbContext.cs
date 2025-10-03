@@ -13,12 +13,14 @@ using Volo.Abp.Gdpr;
 using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Abp.LanguageManagement.EntityFrameworkCore;
 using ABPPermission.Entities.Books;
+using ABPPermission.Entities.Authors;
 
 namespace ABPPermission.Data;
 
 public class ABPPermissionDbContext : AbpDbContext<ABPPermissionDbContext>
 {
     public DbSet<Book> Books { get; set; }
+    public DbSet<Author> Authors { get; set; }
     
     public const string DbTablePrefix = "App";
     public const string DbSchema = null;
@@ -52,6 +54,23 @@ public class ABPPermissionDbContext : AbpDbContext<ABPPermissionDbContext>
                 DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+            
+            // Configure relationship with Author
+            b.HasOne(x => x.Author)
+             .WithMany(x => x.Books)
+             .HasForeignKey(x => x.AuthorId)
+             .IsRequired();
+        });
+
+        builder.Entity<Author>(b =>
+        {
+            b.ToTable(DbTablePrefix + "Authors",
+                DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.Property(x => x.FullName).IsRequired().HasMaxLength(256);
+            b.Property(x => x.PhoneNumber).HasMaxLength(15);
+            b.Property(x => x.Address).HasMaxLength(500);
+            b.Property(x => x.Biography).HasMaxLength(2000);
         });
         
         /* Configure your own entities here */

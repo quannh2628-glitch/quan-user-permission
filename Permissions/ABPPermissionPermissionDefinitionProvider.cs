@@ -19,6 +19,12 @@ public class ABPPermissionPermissionDefinitionProvider : PermissionDefinitionPro
         booksPermission.AddChild(ABPPermissionPermissions.Books.Edit, L("Permission:Books.Edit"));
         booksPermission.AddChild(ABPPermissionPermissions.Books.Delete, L("Permission:Books.Delete"));
 
+        // Author permissions
+        var authorPermission = myGroup.AddPermission(ABPPermissionPermissions.Authors.Default, L("Permission:Authors"));
+        authorPermission.AddChild(ABPPermissionPermissions.Authors.Create, L("Permission:Authors.Create"));
+        authorPermission.AddChild(ABPPermissionPermissions.Authors.Edit, L("Permission:Authors.Edit"));
+        authorPermission.AddChild(ABPPermissionPermissions.Authors.Delete, L("Permission:Authors.Delete"));
+
         // UserManagement permissions
         var userMgmt = myGroup.AddPermission(ABPPermissionPermissions.UserManagement.Default, L("Permission:UserManagement"));
         userMgmt.AddChild(ABPPermissionPermissions.UserManagement.CreateBatch, L("Permission:UserManagement.CreateBatch"));

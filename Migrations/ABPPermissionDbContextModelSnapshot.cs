@@ -24,9 +24,73 @@ namespace ABPPermission.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ABPPermission.Entities.Authors.Author", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Biography")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppAuthors", (string)null);
+                });
+
             modelBuilder.Entity("ABPPermission.Entities.Books.Book", b =>
                 {
                     b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AuthorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -72,6 +136,8 @@ namespace ABPPermission.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("AppBooks", (string)null);
                 });
@@ -2281,6 +2347,17 @@ namespace ABPPermission.Migrations
                     b.ToTable("AbpTextTemplateDefinitionRecords", (string)null);
                 });
 
+            modelBuilder.Entity("ABPPermission.Entities.Books.Book", b =>
+                {
+                    b.HasOne("ABPPermission.Entities.Authors.Author", "Author")
+                        .WithMany("Books")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+                });
+
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>
                 {
                     b.HasOne("Volo.Abp.AuditLogging.AuditLog", null)
@@ -2439,6 +2516,11 @@ namespace ABPPermission.Migrations
                         .HasForeignKey("DefinitionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ABPPermission.Entities.Authors.Author", b =>
+                {
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>

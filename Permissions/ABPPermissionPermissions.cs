@@ -18,11 +18,19 @@ public static class ABPPermissionPermissions
         public const string Delete = Default + ".Delete";
     }
 
+    public static class Authors
+    {
+        public const string Default = GroupName + ".Authors";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }
+
     public static class UserManagement
     {
         public const string Default = GroupName + ".UserManagement";
-        public const string CreateBatch = Default + ".CreateBatch"; // init 100 users
-        public const string FillDob = Default + ".FillDob";       // fill DateOfBirth
+        public const string CreateBatch = Default + ".CreateBatch";
+        public const string FillDob = Default + ".FillDob"; 
     }
 
     //Add your own permission names. Example:

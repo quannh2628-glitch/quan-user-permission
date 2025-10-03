@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using ABPPermission.Permissions;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
@@ -25,14 +26,22 @@ public class BookAppService : ApplicationService, IBookAppService
 
     public async Task<BookDto> GetAsync(Guid id)
     {
-        var book = await _repository.GetAsync(id);
-        return ObjectMapper.Map<Book, BookDto>(book);
+        var queryable = await _repository.GetQueryableAsync();
+        var book = await AsyncExecuter.FirstOrDefaultAsync(
+            queryable.Where(x => x.Id == id).Include(x => x.Author)
+        );
+
+        var bookDto = ObjectMapper.Map<Book, BookDto>(book);
+        bookDto.AuthorName = book?.Author?.FullName;
+
+        return bookDto;
     }
 
     public async Task<PagedResultDto<BookDto>> GetListAsync(PagedAndSortedResultRequestDto input)
     {
         var queryable = await _repository.GetQueryableAsync();
         var query = queryable
+            .Include(x => x.Author) // Include Author data
             .OrderBy(input.Sorting.IsNullOrWhiteSpace() ? "Name" : input.Sorting)
             .Skip(input.SkipCount)
             .Take(input.MaxResultCount);
@@ -40,9 +49,21 @@ public class BookAppService : ApplicationService, IBookAppService
         var books = await AsyncExecuter.ToListAsync(query);
         var totalCount = await AsyncExecuter.CountAsync(queryable);
 
+        var bookDtos = ObjectMapper.Map<List<Book>, List<BookDto>>(books);
+        
+        // Set AuthorName for each book
+        foreach (var bookDto in bookDtos)
+        {
+            var book = books.FirstOrDefault(x => x.Id == bookDto.Id);
+            if (book != null && book.Author != null)
+            {
+                bookDto.AuthorName = book.Author.FullName;
+            }
+        }
+
         return new PagedResultDto<BookDto>(
             totalCount,
-            ObjectMapper.Map<List<Book>, List<BookDto>>(books)
+            bookDtos
         );
     }
 
