@@ -26,6 +26,15 @@ public static class ABPPermissionPermissions
         public const string Delete = Default + ".Delete";
     }
 
+    public static class Customers
+    {
+        public const string Default = GroupName + ".Customers";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+        public const string InitData = Default + ".InitData";
+    }
+
     public static class UserManagement
     {
         public const string Default = GroupName + ".UserManagement";

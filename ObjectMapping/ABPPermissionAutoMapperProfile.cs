@@ -3,6 +3,8 @@ using ABPPermission.Entities.Books;
 using ABPPermission.Services.Dtos.Books;
 using ABPPermission.Entities.Authors;
 using ABPPermission.Services.Dtos.Authors;
+using ABPPermission.Entities.Customers;
+using ABPPermission.Services.Dtos.Customers;
 
 namespace ABPPermission.ObjectMapping;
 
@@ -18,6 +20,10 @@ public class ABPPermissionAutoMapperProfile : Profile
         CreateMap<CreateUpdateAuthorDto, Author>();
         CreateMap<AuthorDto, CreateUpdateAuthorDto>();
         CreateMap<Author, AuthorLookupDto>();
+
+        CreateMap<AppCustomer, CustomerDto>();
+        CreateMap<CreateUpdateCustomerDto, AppCustomer>();
+        CreateMap<CustomerDto, CreateUpdateCustomerDto>();
         /* Create your AutoMapper object mappings here */
     }
 }
