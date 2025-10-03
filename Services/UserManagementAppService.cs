@@ -6,9 +6,12 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Identity;
 using ABPPermission.Services.Dtos;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
+using ABPPermission.Permissions;
 
 namespace ABPPermission.Services;
 
+[Authorize(ABPPermissionPermissions.UserManagement.Default)]
 public class UserManagementAppService : ApplicationService, IUserManagementAppService
 {
 	private readonly IdentityUserManager _userManager;
@@ -20,6 +23,7 @@ public class UserManagementAppService : ApplicationService, IUserManagementAppSe
 		_userRepository = userRepository;
 	}
 
+	[Authorize(ABPPermissionPermissions.UserManagement.CreateBatch)]
 	public async Task<InitUsersResultDto> InitializeHundredUsersAsync()
 	{
 		const string defaultPassword = "Aa12345@@"; // có chữ thường để đạt yêu cầu chính sách
@@ -63,6 +67,7 @@ public class UserManagementAppService : ApplicationService, IUserManagementAppSe
 		return new InitUsersResultDto { Created = created, PasswordReset = reset };
 	}
 
+	[Authorize(ABPPermissionPermissions.UserManagement.FillDob)]
 	public async Task<FillDobResultDto> FillDateOfBirthForNullAsync()
 	{
 		var rng = new Random();

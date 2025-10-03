@@ -19,8 +19,10 @@ public class ABPPermissionPermissionDefinitionProvider : PermissionDefinitionPro
         booksPermission.AddChild(ABPPermissionPermissions.Books.Edit, L("Permission:Books.Edit"));
         booksPermission.AddChild(ABPPermissionPermissions.Books.Delete, L("Permission:Books.Delete"));
 
-        //Define your own permissions here. Example:
-        //myGroup.AddPermission(ABPPermissionPermissions.MyPermission1, L("Permission:MyPermission1"));
+        // UserManagement permissions
+        var userMgmt = myGroup.AddPermission(ABPPermissionPermissions.UserManagement.Default, L("Permission:UserManagement"));
+        userMgmt.AddChild(ABPPermissionPermissions.UserManagement.CreateBatch, L("Permission:UserManagement.CreateBatch"));
+        userMgmt.AddChild(ABPPermissionPermissions.UserManagement.FillDob, L("Permission:UserManagement.FillDob"));
     }
 
     private static LocalizableString L(string name)
